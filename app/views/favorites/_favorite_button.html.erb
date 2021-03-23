@@ -1,0 +1,2 @@
+<% if current_user.favorite?(user) %>
+  <%= form_with(model: current_user.favorites.find_by(micropost_id: user.id), local: true, method: :delete) do |f| %>
