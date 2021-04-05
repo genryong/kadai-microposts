@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :followers, through: :reverses_of_relationship, source: :user
   has_many :favorites
   has_many :likes, through: :favorites, source: :micropost
+  has_many :liles_user, through: :favorites, source: :user
   
 
   
@@ -48,4 +49,5 @@ class User < ApplicationRecord
   def feed_microposts
     Micropost.where(user_id: self.following_ids + [self.id])
   end
+  
 end

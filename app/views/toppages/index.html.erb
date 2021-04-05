@@ -12,7 +12,8 @@
       <%= render 'microposts/microposts', microposts: @microposts %>
     </div>
   </div>
-<div class="center jumbotron">
+<% else %>
+  <div class="center jumbotron">
   <div class="text-center">
     <h1>Welcome to the Microposts</h1>
     <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
